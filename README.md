@@ -1,1 +1,1 @@
-# openrelik-worker-template
+# Openrelik worker template
