@@ -13,8 +13,8 @@ TASK_NAME = "your-worker-package-name.tasks.your_task_name"
 
 # Task metadata for registration in the core system.
 TASK_METADATA = {
-    "display_name": "<SHORT NAME FOR YOUR WORKER>",
-    "description": "<DESCRIPTION FOR YOUR WORKER>",
+    "display_name": "<REPLACE_WITH_NAME_OF_THE_WORKER>",
+    "description": "<REPLACE_WITH_DESCRIPTION_OF_THE_WORKER>",
 }
 
 
@@ -27,7 +27,7 @@ def command(
     workflow_id: str = None,
     user_config: dict = None,
 ) -> str:
-    """Run <COMMAND> on input files.
+    """Run <REPLACE_WITH_COMMAND> on input files.
 
     Args:
         pipe_result: Base64-encoded result from the previous Celery task, if any.
@@ -41,14 +41,14 @@ def command(
     """
     input_files = get_input_files(pipe_result, input_files or [])
     output_files = []
-    base_command = ["<COMMAND>"]
+    base_command = ["<REPLACE_WITH_COMMAND>"]
     base_command_string = " ".join(base_command)
 
     for input_file in input_files:
         output_file = create_output_file(
             output_path,
             filename=input_file.get("filename"),
-            file_extension="<FILE EXTENSION>",
+            file_extension="<REPLACE_WITH_FILE_EXTENSION>",
         )
         command = base_command + [input_file.get("path")]
 
@@ -59,7 +59,7 @@ def command(
         output_files.append(output_file.to_dict())
 
     if not output_files:
-        raise RuntimeError("<ERROR STRING>")
+        raise RuntimeError("<REPLACE_WITH_ERROR_STRING>")
 
     return task_result(
         output_files=output_files,
