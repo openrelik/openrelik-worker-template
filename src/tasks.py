@@ -15,6 +15,17 @@ TASK_NAME = "your-worker-package-name.tasks.your_task_name"
 TASK_METADATA = {
     "display_name": "<REPLACE_WITH_NAME_OF_THE_WORKER>",
     "description": "<REPLACE_WITH_DESCRIPTION_OF_THE_WORKER>",
+    # Configuration that will be rendered as a web for in the UI, and any data entered
+    # by the user will be available to the task function when executing (task_config).
+    "task_config": [
+        {
+            "name": "<REPLACE_WITH_NAME>",
+            "label": "<REPLACE_WITH_LABEL>",
+            "description": "<REPLACE_WITH_DESCRIPTION>",
+            "type": "<REPLACE_WITH_TYPE>",  # Types supported: text, textarea, checkbox
+            "required": False,
+        },
+    ],
 }
 
 
