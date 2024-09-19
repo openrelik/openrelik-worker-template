@@ -169,13 +169,13 @@ files = [
 
 [[package]]
 name = "kombu"
-version = "5.4.0"
+version = "5.4.1"
 description = "Messaging library for Python."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "kombu-5.4.0-py3-none-any.whl", hash = "sha256:c8dd99820467610b4febbc7a9e8a0d3d7da2d35116b67184418b51cc520ea6b6"},
-    {file = "kombu-5.4.0.tar.gz", hash = "sha256:ad200a8dbdaaa2bbc5f26d2ee7d707d9a1fded353a0f4bd751ce8c7d9f449c60"},
+    {file = "kombu-5.4.1-py3-none-any.whl", hash = "sha256:621d365f234e4c089596f3a2510f1ade07026efc28caca426161d8f458786cab"},
+    {file = "kombu-5.4.1.tar.gz", hash = "sha256:1c05178826dab811f8cab5b0a154d42a7a33d8bcdde9fa3d7b4582e43c3c03db"},
 ]
 
 [package.dependencies]
@@ -189,7 +189,7 @@ confluentkafka = ["confluent-kafka (>=2.2.0)"]
 consul = ["python-consul2 (==0.1.5)"]
 librabbitmq = ["librabbitmq (>=2.0.0)"]
 mongodb = ["pymongo (>=4.1.1)"]
-msgpack = ["msgpack (==1.0.8)"]
+msgpack = ["msgpack (==1.1.0)"]
 pyro = ["pyro4 (==4.82)"]
 qpid = ["qpid-python (>=0.26)", "qpid-tools (>=0.26)"]
 redis = ["redis (>=4.5.2,!=4.5.5,!=5.0.2)"]
@@ -201,13 +201,13 @@ zookeeper = ["kazoo (>=2.8.0)"]
 
 [[package]]
 name = "openrelik-worker-common"
-version = "2024.9.8"
+version = "2024.9.19"
 description = "Common utilities for OpenRelik workers"
 optional = false
 python-versions = "<4.0,>=3.10"
 files = [
-    {file = "openrelik_worker_common-2024.9.8-py3-none-any.whl", hash = "sha256:9356dcd714424e8bd0bc1401502741473cd26a38055c8d76d91e8f7d996ed773"},
-    {file = "openrelik_worker_common-2024.9.8.tar.gz", hash = "sha256:81101afdf65209c7a85e931cf90c0695b60b4f3bca50a27083a61227c1dd0515"},
+    {file = "openrelik_worker_common-2024.9.19-py3-none-any.whl", hash = "sha256:a597c9c7d33291b21258ce68df37e5b24d1ea4fbb6d69f807d6ac9ec109dd8ea"},
+    {file = "openrelik_worker_common-2024.9.19.tar.gz", hash = "sha256:318e8b6ca6dd4e3fbe173ef561bcae3fea8db42e45423bd9a2c222b23fc2cd72"},
 ]
 
 [[package]]
@@ -303,4 +303,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "af8a011c5f5520e62e806a358f8871f648c5dc68d39b273fa1685c5930e26a4c"
+content-hash = "2303411297c9db840f19a8242de068aa06c1f2c50cc768f61b7c3344c78f4c3e"
