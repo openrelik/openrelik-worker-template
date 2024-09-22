@@ -27,13 +27,13 @@ files = [
 
 [[package]]
 name = "billiard"
-version = "4.2.0"
+version = "4.2.1"
 description = "Python multiprocessing fork with improvements and bugfixes"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "billiard-4.2.0-py3-none-any.whl", hash = "sha256:07aa978b308f334ff8282bd4a746e681b3513db5c9a514cbdd810cbbdc19714d"},
-    {file = "billiard-4.2.0.tar.gz", hash = "sha256:9a3c3184cb275aa17a732f93f65b20c525d3d9f253722d26a82194803ade5a2c"},
+    {file = "billiard-4.2.1-py3-none-any.whl", hash = "sha256:40b59a4ac8806ba2c2369ea98d876bc6108b051c227baffd928c644d15d8f3cb"},
+    {file = "billiard-4.2.1.tar.gz", hash = "sha256:12b641b0c539073fc8d3f5b8b7be998956665c4233c7c1fcd66a7e677c4fb36f"},
 ]
 
 [[package]]
@@ -169,17 +169,18 @@ files = [
 
 [[package]]
 name = "kombu"
-version = "5.4.1"
+version = "5.4.2"
 description = "Messaging library for Python."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "kombu-5.4.1-py3-none-any.whl", hash = "sha256:621d365f234e4c089596f3a2510f1ade07026efc28caca426161d8f458786cab"},
-    {file = "kombu-5.4.1.tar.gz", hash = "sha256:1c05178826dab811f8cab5b0a154d42a7a33d8bcdde9fa3d7b4582e43c3c03db"},
+    {file = "kombu-5.4.2-py3-none-any.whl", hash = "sha256:14212f5ccf022fc0a70453bb025a1dcc32782a588c49ea866884047d66e14763"},
+    {file = "kombu-5.4.2.tar.gz", hash = "sha256:eef572dd2fd9fc614b37580e3caeafdd5af46c1eff31e7fba89138cdb406f2cf"},
 ]
 
 [package.dependencies]
 amqp = ">=5.1.1,<6.0.0"
+tzdata = {version = "*", markers = "python_version >= \"3.9\""}
 vine = "5.1.0"
 
 [package.extras]
@@ -201,13 +202,13 @@ zookeeper = ["kazoo (>=2.8.0)"]
 
 [[package]]
 name = "openrelik-worker-common"
-version = "2024.9.19"
+version = "2024.9.22"
 description = "Common utilities for OpenRelik workers"
 optional = false
 python-versions = "<4.0,>=3.10"
 files = [
-    {file = "openrelik_worker_common-2024.9.19-py3-none-any.whl", hash = "sha256:a597c9c7d33291b21258ce68df37e5b24d1ea4fbb6d69f807d6ac9ec109dd8ea"},
-    {file = "openrelik_worker_common-2024.9.19.tar.gz", hash = "sha256:318e8b6ca6dd4e3fbe173ef561bcae3fea8db42e45423bd9a2c222b23fc2cd72"},
+    {file = "openrelik_worker_common-2024.9.22-py3-none-any.whl", hash = "sha256:3ff7d17a33cba401909f20a848368df43bf53f33bdd09da26559f47be27b58b8"},
+    {file = "openrelik_worker_common-2024.9.22.tar.gz", hash = "sha256:363cb85931516a471c9fb8e02b80c9c26a8d9523f248d4f8928744a32d6bcad0"},
 ]
 
 [[package]]
@@ -303,4 +304,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "2303411297c9db840f19a8242de068aa06c1f2c50cc768f61b7c3344c78f4c3e"
+content-hash = "61a02ccf848c443338094c887eeb05d38e6410df9802394205f1d51fee0d7850"
