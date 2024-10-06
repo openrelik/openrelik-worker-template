@@ -17,8 +17,18 @@ ENV POETRY_NO_INTERACTION=1 \
     POETRY_VIRTUALENVS_CREATE=1 \
     POETRY_CACHE_DIR=/tmp/poetry_cache
 
+# Configure debugging
+ARG OPENRELIK_PYDEBUG
+ENV OPENRELIK_PYDEBUG ${OPENRELIK_PYDEBUG:-0}
+ARG OPENRELIK_PYDEBUG_PORT
+ENV OPENRELIK_PYDEBUG_PORT ${OPENRELIK_PYDEBUG_PORT:-5678}
+
 # Set working directory
 WORKDIR /openrelik
+
+# Copy poetry toml and install dependencies
+COPY ./pyproject.toml ./poetry.lock .
+RUN poetry install --no-interaction --no-ansi
 
 # Copy files needed to build
 COPY . ./
