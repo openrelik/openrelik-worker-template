@@ -10,7 +10,6 @@ package-mode = false
 python = "^3.10"
 celery = {extras = ["redis"], version = "^5.4.0"}
 openrelik-worker-common = "^2024.10.5"
-debugpy = "^1.8.6"
 
 [build-system]
 requires = ["poetry-core"]
