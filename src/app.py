@@ -17,6 +17,10 @@ import os
 import redis
 from celery.app import Celery
 
+from openrelik_worker_common.setup import setup_debugging
+
+setup_debugging()
+
 REDIS_URL = os.getenv("REDIS_URL")
 celery = Celery(broker=REDIS_URL, backend=REDIS_URL, include=["src.tasks"])
 redis_client = redis.Redis.from_url(REDIS_URL)
