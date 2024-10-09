@@ -233,13 +233,13 @@ zookeeper = ["kazoo (>=2.8.0)"]
 
 [[package]]
 name = "openrelik-worker-common"
-version = "2024.10.7"
+version = "2024.10.9"
 description = "Common utilities for OpenRelik workers"
 optional = false
 python-versions = "<4.0,>=3.10"
 files = [
-    {file = "openrelik_worker_common-2024.10.7-py3-none-any.whl", hash = "sha256:14799d04026db8c3975f6ce991252844e7ac7069d9a1d6e6df48ee2af5a26fee"},
-    {file = "openrelik_worker_common-2024.10.7.tar.gz", hash = "sha256:7f881040ec57849fe0ca7cb1c251007ded83cca87c9c683c43db4b882d0f1217"},
+    {file = "openrelik_worker_common-2024.10.9-py3-none-any.whl", hash = "sha256:15218c6760178f72b329db14a723222ee73edff766ec93a3f81e92a9b564e450"},
+    {file = "openrelik_worker_common-2024.10.9.tar.gz", hash = "sha256:bad77501f2ddc4b1289cf288a636e34f9f08ef502d1536b7d0454a0654cb098a"},
 ]
 
 [package.dependencies]
@@ -338,4 +338,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "9655d49beb3865db58130b399c3f122bbd022acde5f7882affe7973152023fe5"
+content-hash = "17def963eea784f40e14844aa936ab7597f8c7012846910bb6acb06c056bc3c2"
