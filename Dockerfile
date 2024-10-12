@@ -8,6 +8,7 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
 # Install poetry and any other dependency that your worker needs.
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-poetry \
+    p7zip-full \
     # Add your dependencies here
     && rm -rf /var/lib/apt/lists/*
 
