@@ -237,13 +237,13 @@ zookeeper = ["kazoo (>=2.8.0)"]
 
 [[package]]
 name = "openrelik-worker-common"
-version = "2024.10.16"
+version = "2024.10.24"
 description = "Common utilities for OpenRelik workers"
 optional = false
 python-versions = "<4.0,>=3.10"
 files = [
-    {file = "openrelik_worker_common-2024.10.16-py3-none-any.whl", hash = "sha256:d5df95a1d1643740fb98075ef8c9374214c6d1dccf4c71575b934d7e831c94eb"},
-    {file = "openrelik_worker_common-2024.10.16.tar.gz", hash = "sha256:4133fae1d4fb869f0d878ca65e872df75608fc1a77891addb37782b5884e8179"},
+    {file = "openrelik_worker_common-2024.10.24-py3-none-any.whl", hash = "sha256:3df4b0f054ec57787d46c05550904f7d29875b5377d48a29ebdd570f8772bc09"},
+    {file = "openrelik_worker_common-2024.10.24.tar.gz", hash = "sha256:612622095012e90316b3597fbac70c6248ceed1dca0d76a47979e1c990c60de9"},
 ]
 
 [package.dependencies]
@@ -279,13 +279,13 @@ six = ">=1.5"
 
 [[package]]
 name = "redis"
-version = "5.1.1"
+version = "5.2.0"
 description = "Python client for Redis database and key-value store"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "redis-5.1.1-py3-none-any.whl", hash = "sha256:f8ea06b7482a668c6475ae202ed8d9bcaa409f6e87fb77ed1043d912afd62e24"},
-    {file = "redis-5.1.1.tar.gz", hash = "sha256:f6c997521fedbae53387307c5d0bf784d9acc28d9f1d058abeac566ec4dbed72"},
+    {file = "redis-5.2.0-py3-none-any.whl", hash = "sha256:ae174f2bb3b1bf2b09d54bf3e51fbc1469cf6c10aa03e21141f51969801a7897"},
+    {file = "redis-5.2.0.tar.gz", hash = "sha256:0b1087665a771b1ff2e003aa5bdd354f15a70c9e25d5a7dbf9c722c16528a7b0"},
 ]
 
 [package.dependencies]
@@ -342,4 +342,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "7ba31d5164dd0d594f9a1f9c712d03cf286033ec64fac85e002547380ab2e649"
+content-hash = "8fa33913e92fab193bbb618aed808bce8b8c2add9fc03117d982d1efe9110cb5"
