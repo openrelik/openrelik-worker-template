@@ -14,11 +14,8 @@
 
 import subprocess
 
-from openrelik_worker_common.utils import (
-    create_output_file,
-    get_input_files,
-    task_result,
-)
+from openrelik_worker_common.file_utils import create_output_file
+from openrelik_worker_common.task_utils import create_task_result, get_input_files
 
 from .app import celery
 
@@ -87,7 +84,7 @@ def command(
     if not output_files:
         raise RuntimeError("<REPLACE_WITH_ERROR_STRING>")
 
-    return task_result(
+    return create_task_result(
         output_files=output_files,
         workflow_id=workflow_id,
         command=base_command_string,
