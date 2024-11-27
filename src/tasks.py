@@ -69,7 +69,7 @@ def command(
     for input_file in input_files:
         output_file = create_output_file(
             output_path,
-            filename=input_file.get("filename"),
+            display_name=input_file.get("display_name"),
             file_extension="<REPLACE_WITH_FILE_EXTENSION>",
             data_type="<[OPTIONAL]_REPLACE_WITH_DATA_TYPE>",
         )
