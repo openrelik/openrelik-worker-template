@@ -70,7 +70,7 @@ def command(
         output_file = create_output_file(
             output_path,
             display_name=input_file.get("display_name"),
-            file_extension="<REPLACE_WITH_FILE_EXTENSION>",
+            extension="<REPLACE_WITH_FILE_EXTENSION>",
             data_type="<[OPTIONAL]_REPLACE_WITH_DATA_TYPE>",
         )
         command = base_command + [input_file.get("path")]
