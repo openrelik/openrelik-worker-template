@@ -1,3 +1,5 @@
+## NOTE: Bootstrap the new worker with `bash bootstrap.sh`!
+
 # Openrelik worker TEMPLATEWORKERNAME
 ## Description
 Enter a good description of your worker here.
