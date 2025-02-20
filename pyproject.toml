@@ -11,6 +11,10 @@ python = "^3.10"
 celery = {extras = ["redis"], version = "^5.4.0"}
 openrelik-worker-common = "^2024.11.27"
 
+[tool.poetry.group.test.dependencies]
+pytest = "*"
+pytest-cov = "^5.0.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
