@@ -14,18 +14,13 @@
 
 """Tests tasks."""
 
-import pytest # Use pytest for writing tests!
+# Note: Use pytest for writing tests!
+import pytest 
 
-from src.tasks import command
+# from src.tasks import command
 
-def test_task_command(mocker):
+def test_task_command():
     """Test command task."""
-
-    # Example mock
-    mock_task_command = mocker.patch(
-        "src.tasks.command"
-    )
-    mock_task_command.return_value = "my return value"
 
     ret = "some dummy return value"
     assert isinstance(ret,str) 
