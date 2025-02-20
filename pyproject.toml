@@ -14,6 +14,7 @@ openrelik-worker-common = "^2024.11.27"
 [tool.poetry.group.test.dependencies]
 pytest = "*"
 pytest-cov = "^5.0.0"
+pytest-mock = "^3.14.0"
 
 [build-system]
 requires = ["poetry-core"]
