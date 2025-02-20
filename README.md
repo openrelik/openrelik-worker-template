@@ -6,9 +6,9 @@ Enter a good description of your worker here.
 Add the below configuration to the OpenRelik docker-compose.yml file.
 
 ```
-openrelik-worker-analyzer-config:
+openrelik-worker-TEMPLATEWORKERNAME:
     container_name: openrelik-worker-TEMPLATEWORKERNAME
-    image: ghcr.io/openrelik/openrelik-worker-TEMPLATEWORKERNAME:${OPENRELIK_WORKER_TEMPLATEWORKERNAME_VERSION:-latest}
+    image: ghcr.io/openrelik/openrelik-worker-TEMPLATEWORKERNAME:latest
     restart: always
     environment:
       - REDIS_URL=redis://openrelik-redis:6379

@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "openrelik-worker-TEMPLATEWORKERNAME"
 version = "2024.11.27"
-description = "Description of the worker"
+description = "TEMPLATEDESC"
 authors = ["TEMPLATENAME <TEMPLATEEMAIL>"]
 readme = "README.md"
 package-mode = false
