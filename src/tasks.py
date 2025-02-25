@@ -20,12 +20,12 @@ from openrelik_worker_common.task_utils import create_task_result, get_input_fil
 from .app import celery
 
 # Task name used to register and route the task to the correct queue.
-TASK_NAME = "your-worker-package-name.tasks.your_task_name"
+TASK_NAME = "openrelik-worker-TEMPLATEWORKERNAME.tasks.your_task_name"
 
 # Task metadata for registration in the core system.
 TASK_METADATA = {
-    "display_name": "<REPLACE_WITH_NAME_OF_THE_WORKER>",
-    "description": "<REPLACE_WITH_DESCRIPTION_OF_THE_WORKER>",
+    "display_name": "openrelik-worker-TEMPLATEWORKERNAME",
+    "description": "TEMPLATEDESC",
     # Configuration that will be rendered as a web for in the UI, and any data entered
     # by the user will be available to the task function when executing (task_config).
     "task_config": [
@@ -70,7 +70,7 @@ def command(
         output_file = create_output_file(
             output_path,
             display_name=input_file.get("display_name"),
-            file_extension="<REPLACE_WITH_FILE_EXTENSION>",
+            extension="<REPLACE_WITH_FILE_EXTENSION>",
             data_type="<[OPTIONAL]_REPLACE_WITH_DATA_TYPE>",
         )
         command = base_command + [input_file.get("path")]

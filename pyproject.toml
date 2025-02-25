@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "openrelik-worker-template"
+name = "openrelik-worker-TEMPLATEWORKERNAME"
 version = "0.1.0"
 description = "Description of the worker"
 authors = ["YOUR NAME <email@example.com>"]
@@ -10,6 +10,11 @@ package-mode = false
 python = "^3.10"
 celery = { extras = ["redis"], version = "^5.4.0" }
 openrelik-worker-common = "^0.10.0"
+
+[tool.poetry.group.test.dependencies]
+pytest = "*"
+pytest-cov = "^5.0.0"
+pytest-mock = "^3.14.0"
 
 [build-system]
 requires = ["poetry-core"]
