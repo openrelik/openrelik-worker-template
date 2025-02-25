@@ -1,15 +1,15 @@
 [tool.poetry]
 name = "openrelik-worker-TEMPLATEWORKERNAME"
-version = "2024.11.27"
-description = "TEMPLATEDESC"
-authors = ["TEMPLATENAME <TEMPLATEEMAIL>"]
+version = "0.1.0"
+description = "Description of the worker"
+authors = ["YOUR NAME <email@example.com>"]
 readme = "README.md"
 package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.10"
-celery = {extras = ["redis"], version = "^5.4.0"}
-openrelik-worker-common = "^2024.11.27"
+celery = { extras = ["redis"], version = "^5.4.0" }
+openrelik-worker-common = "^0.10.0"
 
 [tool.poetry.group.test.dependencies]
 pytest = "*"
