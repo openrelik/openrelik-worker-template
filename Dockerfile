@@ -27,7 +27,7 @@ ENV OPENRELIK_PYDEBUG_PORT ${OPENRELIK_PYDEBUG_PORT:-5678}
 WORKDIR /openrelik
 
 # Copy poetry toml and install dependencies
-COPY ./pyproject.toml ./poetry.lock .
+COPY ./pyproject.toml ./poetry.lock ./
 RUN poetry install --no-interaction --no-ansi
 
 # Copy files needed to build
