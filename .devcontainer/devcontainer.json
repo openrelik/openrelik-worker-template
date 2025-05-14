@@ -4,15 +4,13 @@
 	"name": "OpenRelik-devcontainer",
 	"image": "mcr.microsoft.com/devcontainers/base:noble",
 	"runArgs": ["--privileged","-v","/dev:/dev"],
-	"features": {
-		"ghcr.io/devcontainers-extra/features/black:2": {}
-	},
 	"customizations": {
 		"vscode": {
 			"extensions": [
 				"ms-python.python",
 				"ms-python.pylint",
-				"ms-python.debugpy"
+				"ms-python.debugpy",
+				"charliermarsh.ruff"
 			]
 		}
 	}

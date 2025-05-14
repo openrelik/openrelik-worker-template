@@ -21,4 +21,8 @@ jobs:
         poetry install --with test --no-root
     - name: Test with pytest - ${{ matrix.python-version }}
       run: |
-        poetry run pytest -s --cov=. -v
+        poetry run pytest -s --cov=. --cov-branch --cov-report=xml -v
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v5
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
