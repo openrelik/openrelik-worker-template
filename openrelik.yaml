@@ -1,0 +1,12 @@
+# Showcase this worker on https://openrelik.org/marketplace
+publish: false
+
+# Worker Metadata. This section is required.
+display_name: User-friendly name of your worker
+description: Brief description of your workers purpose and functionality.
+
+# Optional: Third-Party Tools Used by the Worker.
+tools:
+  - display_name: User-friendly name of the tool
+    description: Brief description of the tool
+    url: http://example.com # URL for more info about the tool

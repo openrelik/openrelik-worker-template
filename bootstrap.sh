@@ -14,8 +14,6 @@ read onelinedescription
 sed -i "" "s/TEMPLATEWORKERNAME/$workername/g" pyproject.toml
 sed -i "" "s/TEMPLATENAME/$yourname/g" pyproject.toml
 sed -i "" "s/TEMPLATEEMAIL/$youremail/g" pyproject.toml
-
 sed -i "" "s/TEMPLATEWORKERNAME/$workername/g" src/tasks.py
 sed -i "" "s/TEMPLATEDESC/$onelinedescription/g" src/tasks.py
-
 sed -i "" "s/TEMPLATEWORKERNAME/$workername/g" README.md
