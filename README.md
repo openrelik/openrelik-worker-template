@@ -16,6 +16,8 @@ The `bootstrap.sh` script is designed to help with this process.
     *   Refer to the "Test" section below for instructions on how to run your tests.
 4.  **Implement Worker Logic:**
     Fill in the `src/tasks.py` file (and any other necessary modules) with the core functionality of your worker.
+5.  **Add LINCESE file:**
+    Add a License file to the repository.
 
 # Openrelik worker TEMPLATEWORKERNAME
 ## Description
