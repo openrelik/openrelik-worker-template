@@ -3,27 +3,26 @@
 {
 	"name": "OpenRelik-devcontainer",
 	"image": "mcr.microsoft.com/devcontainers/base:noble",
-	"runArgs": ["--privileged","-v","/dev:/dev"],
+	"runArgs": [
+		"--privileged",
+		"-v",
+		"/dev:/dev"
+	],
 	"customizations": {
 		"vscode": {
 			"extensions": [
 				"ms-python.python",
-				"ms-python.pylint",
 				"ms-python.debugpy",
 				"charliermarsh.ruff"
 			]
 		}
 	}
-
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "uname -a",
-
 	// Configure tool-specific properties.
 	// "customizations": {},
-
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
 }
