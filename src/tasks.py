@@ -1,11 +1,12 @@
+import structlog
 import subprocess
 
 from openrelik_worker_common.file_utils import create_output_file
 from openrelik_worker_common.logging import Logger
 from openrelik_worker_common.task_utils import create_task_result, get_input_files
 
-
 from .app import celery
+from celery import signals
 
 # Task name used to register and route the task to the correct queue.
 TASK_NAME = "openrelik-worker-TEMPLATEWORKERNAME.tasks.your_task_name"
