@@ -2,7 +2,12 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
 	"name": "OpenRelik-devcontainer",
-	"image": "mcr.microsoft.com/devcontainers/base:noble",
+	"image": "mcr.microsoft.com/devcontainers/python:dev-3.12-bookworm",
+	"features": {
+		"ghcr.io/devcontainers-extra/features/poetry:2": {
+			"version": "latest"
+		}
+	},
 	"runArgs": [
 		"--privileged",
 		"-v",

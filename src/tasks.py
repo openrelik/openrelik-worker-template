@@ -1,6 +1,6 @@
-import structlog
 import subprocess
 
+# API docs - https://openrelik.github.io/openrelik-worker-common/openrelik_worker_common/index.html
 from openrelik_worker_common.file_utils import create_output_file
 from openrelik_worker_common.logging import Logger
 from openrelik_worker_common.task_utils import create_task_result, get_input_files
@@ -28,10 +28,14 @@ TASK_METADATA = {
     ],
 }
 
-# Setup metadata for logger
+log = Logger()
+logger = log.get_logger(__name__)
+
+
 @signals.task_prerun.connect
 def on_task_prerun(sender, task_id, task, args, kwargs, **_):
-    structlog.contextvars.bind_contextvars(task_id=task_id, task_name=task.name, worker_name=TASK_METADATA.get("display_name"))
+    log.bind(task_id=task_id, task_name=task.name,
+             worker_name=TASK_METADATA.get("display_name"))
 
 
 @celery.task(bind=True, name=TASK_NAME, metadata=TASK_METADATA)
@@ -56,7 +60,7 @@ def command(
         Base64-encoded dictionary containing task results.
     """
     # Setup logger
-    logger = Logger().get_logger(__name__, workflow_id=workflow_id)
+    log.bind(workflow_id=workflow_id)
     logger.debug(f"Starting {TASK_NAME} for {workflow_id}")
 
     input_files = get_input_files(pipe_result, input_files or [])
