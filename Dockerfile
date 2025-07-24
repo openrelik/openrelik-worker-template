@@ -7,15 +7,9 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
 
 # Install poetry and any other dependency that your worker needs.
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    python3-poetry \
+    curl \
     # Add your dependencies here
     && rm -rf /var/lib/apt/lists/*
-
-# Configure poetry
-ENV POETRY_NO_INTERACTION=1 \
-    POETRY_VIRTUALENVS_IN_PROJECT=1 \
-    POETRY_VIRTUALENVS_CREATE=1 \
-    POETRY_CACHE_DIR=/tmp/poetry_cache
 
 # Configure debugging
 ARG OPENRELIK_PYDEBUG
@@ -26,16 +20,23 @@ ENV OPENRELIK_PYDEBUG_PORT=${OPENRELIK_PYDEBUG_PORT:-5678}
 # Set working directory
 WORKDIR /openrelik
 
-# Copy poetry toml and install dependencies
-COPY ./pyproject.toml ./poetry.lock ./
-RUN poetry install --no-interaction --no-ansi
+# Install the latest uv binaries
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
-# Copy files needed to build
+# Copy poetry toml and install dependencies
+COPY uv.lock pyproject.toml .
+
+# Install the project's dependencies using the lockfile and settings
+RUN uv sync --locked --no-install-project --no-dev
+
+# Copy project files
 COPY . ./
 
+# Installing separately from its dependencies allows optimal layer caching
+RUN uv sync --locked --no-dev
+
 # Install the worker and set environment to use the correct python interpreter.
-RUN poetry install && rm -rf $POETRY_CACHE_DIR
-ENV VIRTUAL_ENV=/app/.venv PATH="/openrelik/.venv/bin:$PATH"
+ENV PATH="/openrelik/.venv/bin:$PATH"
 
 # Default command if not run from docker-compose (and command being overidden)
-CMD ["celery", "--app=src.tasks", "worker", "--task-events", "--concurrency=1", "--loglevel=INFO"]
+CMD ["celery", "--app=src.tasks", "worker", "--task-events", "--concurrency=1", "--loglevel=DEBUG"]
