@@ -21,7 +21,8 @@ jobs:
       run: uv sync --group test
     - name: Test with pytest - ${{ matrix.python-version }}
       run: uv run pytest -s --cov=. --cov-branch --cov-report=xml -v
-    - name: Upload coverage reports to Codecov
-      uses: codecov/codecov-action@v5
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
+    # Please uncomment this if your organization uses Codecov test coverage!
+    # - name: Upload coverage reports to Codecov
+    #   uses: codecov/codecov-action@v5
+    #   with:
+    #     token: ${{ secrets.CODECOV_TOKEN }}
