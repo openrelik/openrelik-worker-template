@@ -83,9 +83,6 @@ def command(
 
         output_files.append(output_file.to_dict())
 
-    if not output_files:
-        raise RuntimeError("<REPLACE_WITH_ERROR_STRING>")
-
     return create_task_result(
         output_files=output_files,
         workflow_id=workflow_id,
