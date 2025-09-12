@@ -1,12 +1,14 @@
 import subprocess
 
+from celery import signals
+from celery.utils.log import get_task_logger
+
 # API docs - https://openrelik.github.io/openrelik-worker-common/openrelik_worker_common/index.html
 from openrelik_worker_common.file_utils import create_output_file
 from openrelik_worker_common.logging import Logger
 from openrelik_worker_common.task_utils import create_task_result, get_input_files
 
 from .app import celery
-from celery import signals
 
 # Task name used to register and route the task to the correct queue.
 TASK_NAME = "openrelik-worker-TEMPLATEWORKERNAME.tasks.your_task_name"
@@ -28,15 +30,16 @@ TASK_METADATA = {
     ],
 }
 
-log = Logger()
-logger = log.get_logger(__name__)
-
+log_root = Logger()
+logger = log_root.get_logger(__name__, get_task_logger(__name__))
 
 @signals.task_prerun.connect
 def on_task_prerun(sender, task_id, task, args, kwargs, **_):
-    log.bind(task_id=task_id, task_name=task.name,
-             worker_name=TASK_METADATA.get("display_name"))
-
+    log_root.bind(
+        task_id=task_id,
+        task_name=task.name,
+        worker_name=TASK_METADATA.get("display_name"),
+    )
 
 @celery.task(bind=True, name=TASK_NAME, metadata=TASK_METADATA)
 def command(
@@ -60,8 +63,8 @@ def command(
         Base64-encoded dictionary containing task results.
     """
     # Setup logger
-    log.bind(workflow_id=workflow_id)
-    logger.debug(f"Starting {TASK_NAME} for {workflow_id}")
+    log_root.bind(workflow_id=workflow_id)
+    logger.info(f"Starting {TASK_NAME} for workflow {workflow_id}")
 
     input_files = get_input_files(pipe_result, input_files or [])
     output_files = []
@@ -79,8 +82,10 @@ def command(
 
         # Run the command
         with open(output_file.path, "w") as fh:
-            subprocess.Popen(command, stdout=fh)
-
+            subprocess.Popen(command, stdout=fh, stderr=subprocess.PIPE)
+        if process.stderr:
+            logger.error(process.stderr.read())
+        
         output_files.append(output_file.to_dict())
 
     return create_task_result(
